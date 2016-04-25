@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="interceptor" namespace="/" extends="struts-default">
+		<interceptors>
+			<interceptor name="expressioninterceptor" class="cyiq.interceptor.MyInterceptor">
+			
+			</interceptor>
+			<interceptor-stack name="expressionStack">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="expressioninterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="expressionStack"></default-interceptor-ref>
+	</package>
+	<include file = "struts/struts-primer.xml" ></include>
+	<include file = "struts/struts-helloworld.xml" ></include>
+	<include file = "struts/struts-convert.xml" ></include>
+	<include file = "struts/struts-upload.xml" ></include>
+</struts>
